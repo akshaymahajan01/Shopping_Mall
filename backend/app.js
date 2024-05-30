@@ -48,7 +48,7 @@ app.use("/api/v1",paymentRoutes)
 
 
 // deployment config
-const path = require("path");
+import path from "path";
 __dirname = path.resolve();
 
 if (process.env.NODE_ENV === "production") {
