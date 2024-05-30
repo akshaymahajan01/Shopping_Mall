@@ -47,9 +47,10 @@ app.use("/api/v1",orderRoutes)
 app.use("/api/v1",paymentRoutes)
 
 
-// deployment config
-import path from "path";
-__dirname = path.resolve();
+import path from "path";  // for deployment according to es module 
+import { fileURLToPath } from "url"; // same here 
+const __filename = fileURLToPath(import.meta.url); // same here 
+const __dirname = path.dirname(__filename); // same here 
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/build")));
