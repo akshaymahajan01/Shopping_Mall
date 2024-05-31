@@ -52,13 +52,13 @@ import { fileURLToPath } from "url"; // same here
 const __filename = fileURLToPath(import.meta.url); // same here 
 const __dirname = path.dirname(__filename); // same here 
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/build")));
+if (process.env.NODE_ENV === "PRODUCTION") {
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
+
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
   });
 }
-
 
 
 app.use(errorMiddleware)
