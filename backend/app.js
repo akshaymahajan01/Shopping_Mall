@@ -5,7 +5,10 @@ import errorMiddleware from "./middlewares/errors.js";
 import cookieParser from "cookie-parser";
 const app =  express()
 
-
+import path from "path";  // for deployment according to es module 
+import { fileURLToPath } from "url"; // same here 
+const __filename = fileURLToPath(import.meta.url); // same here 
+const __dirname = path.dirname(__filename); // same here 
 
 
 
@@ -18,7 +21,9 @@ process.on("uncaughtException", (err) => {
 
 
 
-dotenv.config({path : "backend/config/config.env"})
+  if (process.env.NODE_ENV !== "PRODUCTION") {
+    dotenv.config({ path: "backend/config/config.env" });
+  }
 
 
 // Connecting to database
@@ -46,11 +51,6 @@ app.use("/api/v1",authRoutes)
 app.use("/api/v1",orderRoutes)
 app.use("/api/v1",paymentRoutes)
 
-
-import path from "path";  // for deployment according to es module 
-import { fileURLToPath } from "url"; // same here 
-const __filename = fileURLToPath(import.meta.url); // same here 
-const __dirname = path.dirname(__filename); // same here 
 
 if (process.env.NODE_ENV === "PRODUCTION") {
   app.use(express.static(path.join(__dirname, "../frontend/build")));
