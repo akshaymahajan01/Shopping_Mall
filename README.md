@@ -6,7 +6,9 @@
 
 Shopping Mall is a full-featured e-commerce application built using the MERN stack (MongoDB, Express.js, React, Node.js). The application provides a seamless shopping experience with features like user authentication, product browsing, shopping cart, order management, and payment processing and also very Admin side managment 
 
+## Screenshots
 
+![Home Page](https://imgur.com/FbuN5SC)
 
 ## Tech Stack
 
