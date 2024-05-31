@@ -8,7 +8,7 @@ Shopping Mall is a full-featured e-commerce application built using the MERN sta
 
 ## Screenshots
 
-![Home Page](https://imgur.com/FbuN5SC)
+![App Screenshot](https://i.postimg.cc/m2rs4wDM/home.png)
 
 ## Tech Stack
 
